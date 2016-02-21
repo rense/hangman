@@ -75,7 +75,6 @@ def game_play(key):
 
     if character in game['used_characters']:
         # Requirements unclear here, do nothing...
-        print 'koekoek'
         return json.dumps(_output(_db_get_game(key)))
     used_characters = game['used_characters'] + character
 
@@ -120,7 +119,6 @@ def _output(data):
         # This game has ended, show the word
         game['word'] = data['word_to_guess']
     else:
-        print data
         game['word'] = _dottify(data['word_to_guess'], data['used_characters'])
     return game
 
